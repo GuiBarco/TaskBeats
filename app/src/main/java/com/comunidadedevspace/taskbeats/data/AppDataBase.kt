@@ -1,6 +1,5 @@
-package com.comunidadedevspace.taskbeats
+package com.comunidadedevspace.taskbeats.data
 
-import android.service.autofill.UserData
 import androidx.room.Database
 import androidx.room.RoomDatabase
 
