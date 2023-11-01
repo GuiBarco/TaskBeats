@@ -1,5 +1,6 @@
 package com.comunidadedevspace.taskbeats.data
 
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
@@ -13,15 +14,15 @@ interface TaskDao {
     fun insert(task: Task)
 
     @Query("Select * from task")
-    fun getAll(): List<Task>
+    fun getAll(): LiveData<List<Task>>
 
-    //update encontrar pelo id a tarefa que quemos rodar
 
     @Update(onConflict = OnConflictStrategy.REPLACE)
     fun update(task: Task)
 
     @Query("DELETE from task")
     fun deleteAll()
+
     @Query("DELETE from task WHERE id =:id")
     fun deleteById(id:Int)
 
